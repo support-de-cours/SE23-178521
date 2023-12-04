@@ -1,0 +1,9 @@
+ceci_est_une_chaine_snake_case
+
+ceci-est-une-chaine-slug
+
+ceciEstUneChaineLowerCamelCase
+
+CeciEstUneChaineUpperCamelCase
+
+executionContext__TypeOfData
