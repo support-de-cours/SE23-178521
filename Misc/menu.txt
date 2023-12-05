@@ -1,0 +1,21 @@
+level 1
+    sublevel A
+    sublevel B
+    sublevel C
+level 2
+    sublevel AA
+    sublevel BB
+        sublevel D
+        sublevel E
+        sublevel F
+    sublevel CC
+
+
+
+id  label           parent_id
+1   level 1         null
+2   sublevel A      1
+3   level 2         null
+4   sublevel AA     3
+5   sublevel BB     3
+6   sublevel D      5

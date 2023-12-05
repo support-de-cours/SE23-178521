@@ -58,15 +58,15 @@ console.log( arr_4[2] );
 // FUNCTION
 // --
 
-function multiplyBy5(num)
+function multiplyBy5(x)
 {
-    const result = num * 5;
+    const result = x * 5;
     console.log( result );
 }
 
 multiplyBy5(0);
 multiplyBy5(1);
-multiplyBy5(2);
+                    multiplyBy5(2);
 multiplyBy5(3);
 multiplyBy5(4);
 multiplyBy5(5);
