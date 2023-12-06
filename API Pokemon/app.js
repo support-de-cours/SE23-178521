@@ -4,8 +4,6 @@ const url = "https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0";
 const target = document.querySelector('[rel=js-pokemons]');
 
 
-
-
 async function httpGet(uri)
 {
     const response = await fetch(uri);
