@@ -57,18 +57,28 @@ const months = ['janvier','février','mars','april','mai','juin','juillet','aout
     }
 
     // Generate months list
-
+    for (let i=1; i<=12; i++)
+    {
+        const node_option = document.createElement('option');
+              node_option.value = i;
+              node_option.innerText = months[i-1];
+        node_month.append(node_option);
+    }
 
     // Generate years list
     // let date = new Date;
 
+    // definition de la date du jour
+    // recu annee
+    // annee-13 = annee max
+    // annee min = annee max - 100
 
+    // boucle () annee max > annee min; year--
+        // create <option> 
+        // option.value = year
+        // option.text = year
+        // node_year <<< option 
 
-
-
-    // console.log(node_day);
-    // console.log(node_month);
-    // console.log(node_year);
 
 
 
