@@ -1,5 +1,8 @@
 'use strict';
 
+const months = ['janvier','février','mars','april','mai','juin','juillet','aout','septembre','octobre','novembre','décembre'];
+
+
 (() => {
 
     const form = document.querySelector('[rel=js-register-form]');
