@@ -6,10 +6,16 @@ const target = document.querySelector('[rel=js-pokemons]');
 
 async function httpGet(uri)
 {
-    const response = await fetch(uri);
-    const data = await response.json();
-
-    return data;
+    try {
+        const response = await fetch(uri);
+        const data = await response.json();
+        return data;
+    }
+    catch(e)
+    {
+        console.error(e);
+        return null;
+    }
 }
 
 
@@ -37,7 +43,7 @@ function showPokemons(pokemons)
 (async function(){
     let pokemons = await httpGet(url);
 
-    showPokemons(pokemons.results);
+    showPokemons(pokemons?.results ?? []);
 })();
 
 

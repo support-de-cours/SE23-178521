@@ -7,25 +7,25 @@ const months = ['janvier','février','mars','april','mai','juin','juillet','aout
 
     const form = document.querySelector('[rel=js-register-form]');
 
-    // form.addEventListener('submit', function(event){
+    form.addEventListener('submit', function(event){
 
-    //     let errors = [];
+        let errors = [];
 
-    //     Array.from(form, child => {
+        Array.from(form, child => {
 
-    //         // Control du champ
-    //         if (!checkControl(child))
-    //         {
-    //             errors.push('Erreur');
-    //         }
+            // Control du champ
+            if (!checkControl(child))
+            {
+                errors.push('Erreur');
+            }
 
-    //     });
+        });
 
-    //     if (errors.length)
-    //     {
-    //         event.preventDefault();
-    //     }
-    // });
+        if (errors.length)
+        {
+            event.preventDefault();
+        }
+    });
 
     // Boucle sur les enfant du formulaire  à l'initialisation du formulaire
     Array.from(form, child => {
@@ -35,7 +35,6 @@ const months = ['janvier','février','mars','april','mai','juin','juillet','aout
 
         // Listen the Blur event
         child.addEventListener("blur", doOnBlur);
-
     });
 
 
@@ -66,23 +65,22 @@ const months = ['janvier','février','mars','april','mai','juin','juillet','aout
     }
 
     // Generate years list
-    // let date = new Date;
+    const min_age = 13;
+    const date = new Date;
+    const year = date.getFullYear();
+    const year_max = year-min_age;
+    const year_min = year_max-100;
 
-    // definition de la date du jour
-    // recu annee
-    // annee-13 = annee max
-    // annee min = annee max - 100
-
-    // boucle () annee max > annee min; year--
-        // create <option> 
-        // option.value = year
-        // option.text = year
-        // node_year <<< option 
-
-
-
+    for (let i=year_max; i>=year_min; i--)
+    {
+        const node_option = document.createElement('option');
+              node_option.value = i;
+              node_option.innerText = i;
+        node_year.append(node_option);
+    }
 
 })();
+
 
 function doOnBlur(event)
 {
@@ -195,7 +193,7 @@ function addRequiredSymbol(control)
 {
     if (control.required)
     {
-        let parent = control.parentNode.querySelector('label') ?? control.parentNode.parentNode.parentNode.querySelector('label');
-        parent.classList.add('required');
+        let label = control.parentNode.querySelector('label') ?? control.parentNode.parentNode.parentNode.querySelector('label');
+        label.classList.add('required');
     }
 }
